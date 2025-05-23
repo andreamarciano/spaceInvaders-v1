@@ -112,6 +112,7 @@ function SpaceInvaders({ onClose }) {
   // const debugHitbox = true;
 
   /* Canvas */
+  document.body.style.overflow = "hidden";
   const canvasRef = useRef(null);
   const canvasSize = {
     width: 1260,
@@ -663,7 +664,6 @@ function SpaceInvaders({ onClose }) {
     playerOpacityRef.current = 1;
 
     /* === INIT CANVAS === */
-    document.body.style.overflow = "hidden";
     const canvas = canvasRef.current;
     const c = canvas.getContext("2d");
     if (!c) return;
@@ -1423,8 +1423,6 @@ function SpaceInvaders({ onClose }) {
       removeEventListener("keydown", handleKeyDown);
       removeEventListener("keyup", handleKeyUp);
       cancelAnimationFrame(animationIdRef.current);
-
-      document.body.style.overflow = "";
     };
   }, [isGameRunning, playerColor]);
 
@@ -1543,7 +1541,10 @@ function SpaceInvaders({ onClose }) {
 
       {/* Close */}
       <button
-        onClick={onClose}
+        onClick={() => {
+          onClose();
+          document.body.style.overflow = "";
+        }}
         className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 px-1 rounded text-white cursor-pointer"
       >
         ✖
