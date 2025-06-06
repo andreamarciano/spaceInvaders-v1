@@ -2,6 +2,8 @@
 
 ![gameScreen](https://github.com/user-attachments/assets/4fc06b4e-911d-4280-98bb-ad59a1ff21ae)
 
+> https://www.youtube.com/watch?v=Kw-jCuOMrsk
+
 ## Why
 
 I’m sharing this project because, while there are many tutorials showing how to build Space Invaders with plain JavaScript and HTML, I couldn’t find any recent tutorials implementing the game with modern React patterns. For example, in some videos I saw people asking for help trying to remake the game in React — I even searched for such tutorials myself.
